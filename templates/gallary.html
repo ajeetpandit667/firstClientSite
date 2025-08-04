@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makeup Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-pink-50 text-pink-900 font-sans">
+    <!-- Navbar -->
+    <header class="flex justify-between items-center p-5 bg-pink-100 shadow">
+      <h1 class="text-xl font-bold text-pink-700">PBM Studio</h1>
+      <nav class="space-x-6 text-pink-900">
+        <a
+          href="/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/' %}text-pink-600{% endif %}"
+          >Home</a
+        >
+        <a
+          href="/about-us/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/about-us/' %}text-pink-600{% endif %}"
+          >About</a
+        >
+        <a
+          href="/services/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/services/' %}text-pink-600{% endif %}"
+          >Services</a
+        >
+        <a
+          href="/Image-gallary/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/Image-gallary/' %}text-pink-600{% endif %}"
+          >Portfolio</a
+        >
+        <a
+          href="/contact-us/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/contact-us/' %}text-pink-600{% endif %}"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+      >
+        Book Now
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-12 bg-rose-100">
+      <h1 class="text-2xl md:text-3xl font-bold text-pink-700">
+        Makeup Transformations
+      </h1>
+      <p class="mt-2 text-pink-600">
+        Discover stunning makeup artistry from talented artists around the world
+      </p>
+    </section>
+
+    <!-- Category Tabs -->
+    <div class="flex justify-center space-x-4 py-4 border-b border-pink-200">
+      <button
+        class="text-pink-600 border-b-2 border-pink-500 pb-1 font-semibold"
+      >
+        All
+      </button>
+      <button class="hover:text-pink-600 text-pink-900">Bridal</button>
+      <button class="hover:text-pink-600 text-pink-900">Editorial</button>
+      <button class="hover:text-pink-600 text-pink-900">Before & After</button>
+      <button class="hover:text-pink-600 text-pink-900">Video</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-6 bg-fuchsia-50"
+    >
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Makeup"
+        class="rounded-md"
+      />
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Before"
+        class="rounded-md"
+      />
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Makeup"
+        class="rounded-md"
+      />
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Bride"
+        class="rounded-md"
+      />
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Before After"
+        class="rounded-md"
+      />
+      <div class="relative">
+        <img
+          src="https://via.placeholder.com/150"
+          alt="Colorful Makeup"
+          class="rounded-md"
+        />
+      </div>
+      <div class="relative">
+        <img
+          src="https://via.placeholder.com/150"
+          alt="Tutorial"
+          class="rounded-md"
+        />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
+          >
+            <svg
+              class="w-4 h-4 text-pink-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M6 4l10 6-10 6V4z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Bold Look"
+        class="rounded-md"
+      />
+      <div class="relative">
+        <img
+          src="https://via.placeholder.com/150"
+          alt="Play Button"
+          class="rounded-md"
+        />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
+          >
+            <svg
+              class="w-4 h-4 text-pink-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path d="M6 4l10 6-10 6V4z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Load More -->
+    <div class="text-center py-6">
+      <button
+        class="px-6 py-2 border border-pink-300 text-pink-700 rounded hover:bg-pink-100"
+      >
+        Load More
+      </button>
+    </div>
+
+    <!-- Submit Section -->
+    <section class="text-center py-12 bg-pink-100 text-pink-900">
+      <h2 class="text-xl font-semibold text-pink-700">
+        Share Your Transformation
+      </h2>
+      <p class="mt-2">
+        Join our community of makeup artists and beauty enthusiasts
+      </p>
+      <button
+        class="mt-4 px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white font-medium rounded-full"
+      >
+        Submit Your Look
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-700 text-pink-100 text-sm px-6 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div>
+          <h3 class="text-pink-100 font-semibold mb-2">Glam Studio Gallery</h3>
+          <p>Showcasing the world's most beautiful makeup transformations.</p>
+        </div>
+        <div>
+          <h3 class="text-pink-100 font-semibold mb-2">Quick Links</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-pink-300">Gallery</a></li>
+            <li><a href="#" class="hover:text-pink-300">Artists</a></li>
+            <li><a href="#" class="hover:text-pink-300">Submit</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-pink-100 font-semibold mb-2">Categories</h3>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-pink-300">Bridal</a></li>
+            <li><a href="#" class="hover:text-pink-300">Editorial</a></li>
+            <li><a href="#" class="hover:text-pink-300">Before & After</a></li>
+            <li><a href="#" class="hover:text-pink-300">Video Tutorials</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-pink-100 font-semibold mb-2">Follow Us</h3>
+          <div class="flex space-x-3">
+            <a href="#" class="hover:text-pink-300">📷</a>
+            <a href="#" class="hover:text-pink-300">📹</a>
+            <a href="#" class="hover:text-pink-300">🎵</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

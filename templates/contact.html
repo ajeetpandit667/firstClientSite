@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Connect | Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-pink-90 text-pink-900 font-sans">
+    <!-- Navbar -->
+
+    <header class="flex justify-between items-center p-5 bg-pink-100 shadow">
+      <h1 class="text-xl font-bold text-pink-700">PBM Studio</h1>
+      <nav class="space-x-6 text-pink-900">
+        <a
+          href="/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/' %}text-pink-600{% endif %}"
+          >Home</a
+        >
+        <a
+          href="/about-us/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/about-us/' %}text-pink-600{% endif %}"
+          >About</a
+        >
+        <a
+          href="/services/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/services/' %}text-pink-600{% endif %}"
+          >Services</a
+        >
+        <a
+          href="/Image-gallary/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/Image-gallary/' %}text-pink-600{% endif %}"
+          >Portfolio</a
+        >
+        <a
+          href="/contact-us/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/contact-us/' %}text-pink-600{% endif %}"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+      >
+        Book Now
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-rose-100 text-center py-12">
+      <h2 class="text-3xl font-bold mb-2 text-pink-700">Get in Touch</h2>
+      <p class="text-pink-600">
+        We’d love to hear from you. Send us a message and we’ll respond as soon
+        as possible.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
+      <!-- Left Side -->
+      <div class="space-y-6">
+        <!-- Google Map Interactive Search -->
+        <div class="bg-white p-4 rounded-lg shadow border border-pink-100 mb-4">
+          <form id="map-search-form" class="flex items-center space-x-2">
+            <input
+              id="map-search-input"
+              type="text"
+              placeholder="Search location..."
+              class="flex-1 p-2 border border-pink-200 rounded focus:ring-2 focus:ring-pink-400"
+            />
+            <button
+              type="submit"
+              class="bg-rose-400 hover:bg-pink-600 text-white px-4 py-2 rounded font-semibold transition"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <iframe
+          id="google-map-iframe"
+          src="https://maps.google.com/maps?q=New+York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-64 rounded-lg shadow border-4 border-pink-200"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        <script>
+          document
+            .getElementById("map-search-form")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+              var query = document
+                .getElementById("map-search-input")
+                .value.trim();
+              if (query) {
+                var mapSrc =
+                  "https://maps.google.com/maps?q=" +
+                  encodeURIComponent(query) +
+                  "&t=&z=13&ie=UTF8&iwloc=&output=embed";
+                document.getElementById("google-map-iframe").src = mapSrc;
+              }
+            });
+        </script>
+
+        <!-- Contact Info -->
+        <div class="bg-pink-100 shadow p-6 rounded-lg space-y-4">
+          <h3 class="font-semibold text-lg mb-2 text-pink-700">
+            Contact Information
+          </h3>
+          <div class="flex items-center space-x-3">
+            <span>📞</span>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span>📧</span>
+            <p>hello@studioconnect.com</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span>📍</span>
+            <p>123 Creative Street, Design District, New York, NY 10001</p>
+          </div>
+          <a
+            href="#"
+            class="inline-block bg-green-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full font-semibold shadow"
+            >WhatsApp Us</a
+          >
+        </div>
+
+        <!-- Business Hours -->
+        <div class="bg-rose-100 shadow p-6 rounded-lg">
+          <h3 class="font-semibold text-lg mb-3 text-pink-700">
+            Business Hours
+          </h3>
+          <div class="flex justify-between mb-2">
+            <span class="text-pink-600 font-medium">Mon - Fri</span>
+            <span>9:00 AM - 6:00 PM</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-fuchsia-500 font-medium">Weekend</span>
+            <span>10:00 AM - 4:00 PM</span>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="bg-fuchsia-50 shadow p-6 rounded-lg">
+          <h3 class="font-semibold text-lg mb-3 text-fuchsia-700">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-pink-500 text-2xl">📷</a>
+            <a href="#" class="text-blue-400 text-2xl">📘</a>
+            <a href="#" class="text-green-400 text-2xl">📱</a>
+            <a href="#" class="text-fuchsia-700 text-2xl">🔗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Form -->
+      <div class="bg-pink-100 shadow p-8 rounded-lg">
+        <h3 class="text-xl font-semibold mb-6 text-pink-700">
+          Send us a Message
+        </h3>
+        <form class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Your full name"
+              class="w-full p-3 border border-pink-200 rounded focus:ring-2 focus:ring-pink-400"
+              required
+            />
+            <input
+              type="email"
+              placeholder="your@email.com"
+              class="w-full p-3 border border-pink-200 rounded focus:ring-2 focus:ring-pink-400"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="+1 (555) 123-4567"
+            class="w-full p-3 border border-pink-200 rounded focus:ring-2 focus:ring-pink-400"
+            required
+          />
+          <textarea
+            rows="4"
+            placeholder="Tell us about your project or inquiry..."
+            class="w-full p-3 border border-pink-200 rounded focus:ring-2 focus:ring-pink-400"
+            required
+          ></textarea>
+          <div class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              id="policy"
+              class="w-4 h-4 accent-pink-500"
+            />
+            <label for="policy" class="text-sm text-pink-600"
+              >I agree to the privacy policy and terms of service</label
+            >
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-rose-400 hover:bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold shadow-lg transition"
+          >
+            Send Message →
+          </button>
+          <p class="text-sm text-pink-500 mt-2">
+            We respect your privacy and will never share your information.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-700 text-pink-100 text-sm py-10">
+      <div class="container mx-auto px-6 grid md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-bold text-pink-100 mb-2">PBM Studio</h4>
+          <p>Creating beautiful moments through the art of makeup.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-pink-100 mb-2">Quick Links</h4>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:text-pink-300">About Us</a></li>
+            <li><a href="#" class="hover:text-pink-300">Services</a></li>
+            <li><a href="#" class="hover:text-pink-300">Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-pink-100 mb-2">Contact</h4>
+          <p>+1 (555) 123-4567</p>
+          <p>hello@glamstudio.com</p>
+          <p>New York, NY 10001</p>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-pink-200">
+        © 2025 PBM Studio. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

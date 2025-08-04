@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PBM Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% load static %}
+  </head>
+  <body class="font-sans text-pink-900 bg-pink-100">
+    <!-- Navbar -->
+
+    <header class="flex justify-between items-center p-5 bg-pink-100 shadow">
+      <h1 class="text-xl font-bold text-pink-700">PBM Studio</h1>
+      <nav class="space-x-6 text-pink-900">
+        <a
+          href="/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/' %}text-pink-600{% endif %}"
+          >Home</a
+        >
+        <a
+          href="/about-us/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/about-us/' %}text-pink-600{% endif %}"
+          >About</a
+        >
+        <a
+          href="/services/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/services/' %}text-pink-600{% endif %}"
+          >Services</a
+        >
+        <a
+          href="/Image-gallary/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/Image-gallary/' %}text-pink-600{% endif %}"
+          >Portfolio</a
+        >
+        <a
+          href="/contact-us/"
+          class="font-semibold hover:text-pink-600 {% if request.path == '/contact-us/' %}text-pink-600{% endif %}"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600"
+      >
+        Book Now
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-[90vh] bg-cover bg-center flex items-center justify-center text-white text-center"
+      style="background-image: url('{% static 'homebg.png' %}')"
+    >
+      <div class="bg-rose-900 bg-opacity-40 p-8 rounded-lg">
+        <h2 class="text-5xl font-bold mb-4 text-pink-100">Glam Studio</h2>
+        <p class="text-lg mb-6 text-pink-100">
+          Where beauty meets artistry. Professional makeup services for your
+          most special moments.
+        </p>
+        <a
+          href="#"
+          class="bg-pink-200 hover:bg-pink-300 text-pink-900 font-bold py-2 px-6 rounded-full transition"
+          >Book Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-rose-100">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold">Why Choose Us?</h3>
+      </div>
+      <div
+        class="container mx-auto grid md:grid-cols-3 gap-10 text-center px-6"
+      >
+        <div>
+          <div class="text-pink-600 text-4xl mb-4">💄</div>
+          <h4 class="font-bold text-lg text-pink-800">Professional Artistry</h4>
+          <p class="text-sm mt-2 text-pink-700">
+            Expert makeup artists with years of experience in bridal, editorial,
+            and special occasion makeup.
+          </p>
+        </div>
+        <div>
+          <div class="text-pink-600 text-4xl mb-4">🌟</div>
+          <h4 class="font-bold text-lg text-pink-800">Luxury Experience</h4>
+          <p class="text-sm mt-2 text-pink-700">
+            Indulge in a premium beauty experience in our elegant studio
+            designed for comfort and relaxation.
+          </p>
+        </div>
+        <div>
+          <div class="text-pink-600 text-4xl mb-4">📅</div>
+          <h4 class="font-bold text-lg text-pink-800">Flexible Scheduling</h4>
+          <p class="text-sm mt-2 text-pink-700">
+            Easy online booking with flexible hours to accommodate your busy
+            lifestyle and special events.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-fuchsia-50 text-center">
+      <h3 class="text-3xl font-bold mb-2 text-fuchsia-700">
+        What Our Clients Say
+      </h3>
+      <p class="text-fuchsia-500 mb-8">
+        Real stories from our beautiful brides and clients
+      </p>
+      <div class="max-w-xl mx-auto bg-pink-100 p-6 rounded-lg shadow">
+        <div class="flex items-center mb-4">
+          <img
+            src="https://i.pravatar.cc/50"
+            class="rounded-full w-10 h-10 mr-3"
+            alt="Client photo"
+          />
+          <div class="text-left">
+            <p class="font-bold text-sm">Jessica Martinez</p>
+            <p class="text-xs text-gray-500">Bride</p>
+          </div>
+        </div>
+        <p class="italic text-pink-900 mb-4">
+          "Professional, talented, and so easy to work with. The studio
+          atmosphere is relaxing and the results are always flawless. Worth
+          every penny!"
+        </p>
+        <div class="text-yellow-500 text-xl">★★★★★</div>
+        {% comment %}
+        <div class="mt-4">
+          <button class="mx-1 w-8 h-8 rounded-full bg-gray-300">‹</button>
+          <button class="mx-1 w-8 h-8 rounded-full bg-gray-300">›</button>
+        </div>
+        {% endcomment %}
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-pink-200 text-pink-900 text-center">
+      <h3 class="text-3xl font-bold mb-4">Ready to Look Your Best?</h3>
+      <p class="mb-6">
+        Book your appointment today and let our expert artists create the
+        perfect look for your special occasion.
+      </p>
+      <a
+        href="#"
+        class="bg-white text-pink-600 font-semibold py-2 px-6 rounded-full hover:bg-pink-100 transition"
+        >Schedule Consultation</a
+      >
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-700 text-pink-100 py-10">
+      <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
+        <div>
+          <h4 class="font-bold mb-3">Glam Studio</h4>
+          <p>Creating beautiful moments through the art of makeup.</p>
+          <div class="flex space-x-3 mt-4">
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+                alt="FB"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png"
+                alt="IG"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/24/145/145807.png"
+                alt="TW"
+            /></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold mb-3">Services</h4>
+          <ul class="space-y-1">
+            <li>Bridal Makeup</li>
+            <li>Special Events</li>
+            <li>Editorial</li>
+            <li>Makeup Lessons</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-3">Contact</h4>
+          <p>(555) 123-4567</p>
+          <p>hello@glamstudio.com</p>
+          <p>123 Beauty Ave, City</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-3">Hours</h4>
+          <p>Mon-Fri: 8AM–7PM</p>
+          <p>Saturday: 8AM–6PM</p>
+          <p>Sunday: 10AM–4PM</p>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-pink-200">
+        © 2025 PBM Studio. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
